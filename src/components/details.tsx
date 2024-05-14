@@ -3,7 +3,11 @@ import { ComProps } from "../model/comProps";
 import Project from "./project"
 import { ProjectModel } from "../model/ProjectModel";
 import axios from "axios";
-import myData from "../data/projects.json"
+import projectData from "../data/projects.json"
+import announcementData from "../data/announcement.json";
+import trendData from "../data/trend.json";
+import Announcement from "./announcement";
+import Trend from "./trend";
 
 
 function Details(props: ComProps<ProjectModel>) {
@@ -68,14 +72,33 @@ function Details(props: ComProps<ProjectModel>) {
                 </div>
 
 
-                {/*project*/}
-                <div className=" bg-slate-100 min-h-screen px-5">
-                    <h1 className="px-2 py-3 text-2xl font-bold">Projects</h1>
-                    <div className="px-3 pt-3 grid grid-cols-4 gap-4">
-                        {myData.map(data => { return <Project classString=" flex flex-col bg-gray-300 border-2" data={data} /> })}
-                    </div>
+                <div className=" bg-slate-100 flex flex-row">
+                    {/*project*/}
+                    <div className=" min-h-screen px-2 grow mx-3">
+                        <h1 className="px-2 py-3 text-2xl font-bold">Projects</h1>
+                        <div className="px-3 pt-3 grid grid-cols-4 gap-4">
+                            {projectData.map(data => { return <Project classString=" flex flex-col bg-gray-300 border-2" data={data} /> })}
+                        </div>
 
+                    </div>
+                    <div className="min-h-screen">
+                        <div className="mx-6">
+                            <h1 className="px-2 py-3 text-2xl font-bold">Announcement</h1>
+                            <div className="px-3 pt-3 pb-2 flex flex-col gap-1 border-2 rounded-lg">
+                                {announcementData.map(data => { return <Announcement classString=" flex flex-col bg-gray-300 border-2" data={data} /> })}
+                            </div>
+                        </div>
+
+                        <div className="mx-6 max-w-sm">
+                            <h1 className="px-2 py-3 text-2xl font-bold">Trending</h1>
+                            <div className="px-3 pt-3 pb-2 flex flex-col gap-1 border-2 rounded-lg">
+                                {trendData.map(data => { return <Trend classString=" flex flex-col bg-gray-300 border-2" data={data}/> })}
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
+
             </div >
 
         </>

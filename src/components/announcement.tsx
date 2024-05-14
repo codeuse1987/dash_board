@@ -1,10 +1,16 @@
+import { AnnouncementModel } from "../model/AnnouncementModel";
+import { ComProps } from "../model/comProps";
 
 
-function Announcement() {
+function Announcement(props: ComProps<AnnouncementModel>) {
+    const { classString, data } = props;
     return (
         <>
-        <h1>A1</h1>
-        <p>Detail</p>
+            <div className="border-b-4 border-slate-300 ">
+                <h1>{data?.title}</h1>
+                <p className="pl-1">{data?.detail}</p>
+            </div>
+
         </>
     )
 }
