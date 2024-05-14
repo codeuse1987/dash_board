@@ -1,10 +1,9 @@
 import { ComProps } from "../model/comProps";
 import { TrendModel } from "../model/TrendModel";
 
-export default function Trend(props: ComProps<TrendModel>, ...arg: string[]) {
+export default function Trend(props: ComProps<TrendModel>) {
 
     const { data } = props
-    console.log(arg);
     return (
         <>
             <div className="flex flex-row">

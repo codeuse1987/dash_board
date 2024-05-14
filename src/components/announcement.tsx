@@ -3,7 +3,7 @@ import { ComProps } from "../model/comProps";
 
 
 function Announcement(props: ComProps<AnnouncementModel>) {
-    const { classString, data } = props;
+    const { data } = props;
     return (
         <>
             <div className="border-b-4 border-slate-300 ">

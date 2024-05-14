@@ -15,10 +15,10 @@ function Details(props: ComProps<ProjectModel>) {
 
     const { classString } = props;
     const [search, setSearch] = useState<string>();
-    const [data, setData] = useState<ProjectModel[]>([]);
-    function handleInput() {
+    // const [data, setData] = useState<ProjectModel[]>([]);
+    // function handleInput() {
 
-    }
+    // }
 
     function handleData() {
         axios.get('../data/projects.json')
@@ -41,7 +41,7 @@ function Details(props: ComProps<ProjectModel>) {
                         <div className="flex  max-w-sm bg-white rounded-lg border-2 my-2 mx-2">
                             <div className="content-center">
                                 <input type="search" className="w-full px-4 py-1 text-gray-800 rounded-full focus:outline-none"
-                                    placeholder="search" value={search} onChange={(e) => { console.log(e) }} />
+                                    placeholder="search" value={search} onChange={(e) => { setSearch(e.target.value) }} />
                             </div>
                             <div>
                                 <button type="submit" className="flex items-center bg-blue-500 justify-center text-white rounded-r-lg"
